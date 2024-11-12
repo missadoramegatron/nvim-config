@@ -52,3 +52,10 @@ require("catppuccin").setup({
 
 -- setup must be called before loading
 vim.cmd.colorscheme("catppuccin")
+vim.api.nvim_set_hl(0, "illuminatedWord", { link = "NONE" })
+vim.lsp.handlers["textDocument/documentHighlight"] = function() end
+vim.cmd([[
+  highlight illuminatedWordText guibg=NONE gui=NONE
+  highlight illuminatedWordRead guibg=NONE gui=NONE
+  highlight illuminatedWordWrite guibg=NONE gui=NONE
+]])
